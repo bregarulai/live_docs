@@ -32,4 +32,11 @@
 }
 
 @layer utilities {
+  .header {
+    @apply min-h-[92px] min-w-full flex-nowrap bg-dark-100 flex w-full items-center justify-between gap-2 px-4;
+  }
+
+  .document-title {
+    @apply line-clamp-1 border-dark-400 text-base font-semibold leading-[24px] sm:pl-0 sm:text-xl;
+  }
 }
