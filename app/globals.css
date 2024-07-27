@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "@liveblocks/react-ui/styles.css";
+@import "@liveblocks/react-lexical/styles.css";
 @import "../styles/dark-theme.css";
 
 @layer base {
@@ -42,6 +44,14 @@
 
   .auth-page {
     @apply flex h-screen w-full flex-col items-center justify-center gap-10;
+  }
+
+  .loader {
+    @apply flex size-full h-screen items-center justify-center gap-3 text-white;
+  }
+
+  .collaborative-room {
+    @apply flex size-full max-h-screen flex-1 flex-col items-center overflow-hidden;
   }
 }
 
