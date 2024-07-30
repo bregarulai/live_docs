@@ -1,7 +1,6 @@
 import DocumentCard from "./DocumentCard";
 
 const DocumentList = ({ roomDocuments }: DocumentListProps) => {
-  console.log("Room Documents Data List: ", roomDocuments);
   return (
     <>
       {" "}
