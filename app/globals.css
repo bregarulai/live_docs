@@ -81,6 +81,26 @@
   .view-only-tag {
     @apply rounded-md bg-dark-400/50 px-2 py-0.5 text-xs text-blue-100/50;
   }
+
+  .document-list-container {
+    @apply flex flex-col items-center mb-10 w-full gap-10 px-5;
+  }
+
+  .document-list-title {
+    @apply max-w-[730px] items-end flex w-full justify-between;
+  }
+
+  .text-28-semibold {
+    @apply text-[28px] font-semibold;
+  }
+
+  .document-ul {
+    @apply flex w-full max-w-[730px] flex-col gap-5;
+  }
+
+  .document-list-item {
+    @apply flex items-center justify-between gap-4 rounded-lg bg-doc bg-cover p-5 shadow-xl;
+  }
 }
 
 /* ======================== Clerk Override */
