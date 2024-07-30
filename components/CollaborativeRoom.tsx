@@ -3,6 +3,7 @@
 import { ClientSideSuspense, RoomProvider } from "@liveblocks/react/suspense";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 import Header from "./Header";
 import { Editor } from "./editor/Editor";
@@ -10,7 +11,7 @@ import ActiveCollaborators from "./ActiveCollaborators";
 import { Input } from "./ui/input";
 import Loader from "./Loader";
 import { UserType } from "./constants";
-import Image from "next/image";
+import { useEditDocumentTitle } from "./customHooks";
 
 const CollaborativeRoom = ({
   roomId,
@@ -18,31 +19,16 @@ const CollaborativeRoom = ({
 }: CollaborativeRoomProps) => {
   const currentUserType = "editor";
 
-  const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
-  const [editing, setEditing] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const updateTitleHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {};
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
-        setEditing(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  const {
+    containerRef,
+    editing,
+    loading,
+    documentTitle,
+    inputRef,
+    setDocumentTitle,
+    updateTitleHandler,
+    setEditing,
+  } = useEditDocumentTitle(roomMetadata.title);
 
   return (
     <RoomProvider id={roomId}>
