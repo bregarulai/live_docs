@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 import { getDocuments } from "@/lib/actions/room.actions";
 import Link from "next/link";
 import { dateConverter } from "@/lib/utils";
+import DocumentList from "@/components/DocumentList";
 
 const Home = async () => {
   const clerkUser = await currentUser();
@@ -16,7 +17,7 @@ const Home = async () => {
   const roomDocuments = await getDocuments(
     clerkUser.emailAddresses[0].emailAddress
   );
-  console.log("Room Documents: ", roomDocuments);
+
   return (
     <div className="home-container">
       <Header className="sticky left-0 top-0">
@@ -37,32 +38,7 @@ const Home = async () => {
             />
           </div>
           <ul className="document-ul">
-            {roomDocuments.data.map(
-              ({ id, metadata: { title }, createdAt }: any) => (
-                <li key={id} className="document-list-item">
-                  <Link
-                    href={`/documents/${id}`}
-                    className="flex flex-1 items-center gap-4"
-                  >
-                    <div className="hidden rounded-md bg-dark-500 p-2 sm:block">
-                      <Image
-                        src={"/assets/icons/doc.svg"}
-                        height={40}
-                        width={40}
-                        alt="file"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="line-clamp-1 text-lg">{title}</p>
-                      <p className="text-sm font-light text-blue-100">
-                        Created about {dateConverter(createdAt)}
-                      </p>
-                    </div>
-                  </Link>
-                  {/*TODO: Delete Button */}
-                </li>
-              )
-            )}
+            <DocumentList roomDocuments={roomDocuments.data} />
           </ul>
         </div>
       ) : (

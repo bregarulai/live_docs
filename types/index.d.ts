@@ -41,3 +41,31 @@ declare type CollaborativeRoomProps = {
   users?: User[];
   currentUserType?: UserType;
 };
+
+declare type DocumentData = {
+  type: string;
+  id: string;
+  lastConnectionAt: Date;
+  createdAt: string;
+  metadata: RoomMetadata;
+  defaultAccesses: string[];
+  groupsAccesses?: null;
+  usersAccesses?: null;
+};
+
+declare type DocumentListProps = {
+  roomDocuments: DocumentData[];
+};
+
+declare type DocumentCardProps = {
+  document: {
+    type: string;
+    id: string;
+    lastConnectionAt: Date;
+    createdAt: string;
+    metadata: RoomMetadata;
+    defaultAccesses: string[];
+    groupsAccesses?: null;
+    usersAccesses?: null;
+  };
+};
