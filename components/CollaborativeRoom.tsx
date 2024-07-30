@@ -2,7 +2,6 @@
 
 import { ClientSideSuspense, RoomProvider } from "@liveblocks/react/suspense";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import Header from "./Header";
@@ -26,9 +25,9 @@ const CollaborativeRoom = ({
     documentTitle,
     inputRef,
     setDocumentTitle,
-    updateTitleHandler,
     setEditing,
-  } = useEditDocumentTitle(roomMetadata.title);
+    updateTitleHandler,
+  } = useEditDocumentTitle(roomMetadata.title, roomId);
 
   return (
     <RoomProvider id={roomId}>
