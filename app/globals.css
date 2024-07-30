@@ -65,6 +65,10 @@
   .gradient-blue {
     @apply bg-gradient-to-t from-blue-500 to-blue-400;
   }
+
+  .collaborators-list {
+    @apply hidden items-center justify-end -space-x-3 overflow-hidden sm:flex;
+  }
 }
 
 /* ======================== Clerk Override */
