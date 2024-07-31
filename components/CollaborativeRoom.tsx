@@ -9,15 +9,15 @@ import { Editor } from "./editor/Editor";
 import ActiveCollaborators from "./ActiveCollaborators";
 import { Input } from "./ui/input";
 import Loader from "./Loader";
-import { UserType } from "./constants";
+import { UserPermision } from "./constants";
 import { useEditDocumentTitle } from "./customHooks";
 
 const CollaborativeRoom = ({
   roomId,
   roomMetadata,
+  users,
+  currentUserType,
 }: CollaborativeRoomProps) => {
-  const currentUserType = "editor";
-
   const {
     containerRef,
     editing,
@@ -54,7 +54,7 @@ const CollaborativeRoom = ({
                   <p className="document-title">{documentTitle}</p>
                 </>
               )}
-              {currentUserType === UserType.EDITOR && !editing && (
+              {currentUserType === UserPermision.EDITOR && !editing && (
                 <Image
                   className="cursor-pointer"
                   src={"/assets/icons/edit.svg"}
@@ -64,7 +64,7 @@ const CollaborativeRoom = ({
                   onClick={() => setEditing(true)}
                 />
               )}
-              {currentUserType !== UserType.EDITOR && !editing && (
+              {currentUserType !== UserPermision.EDITOR && !editing && (
                 <p className="view-only-tag">View only</p>
               )}
               {loading && <p className="text-sm text-gray-400">saving...</p>}
@@ -79,7 +79,7 @@ const CollaborativeRoom = ({
               </SignedIn>
             </div>
           </Header>
-          <Editor />
+          <Editor roomId={roomId} currentUserType={currentUserType} />
         </div>
       </ClientSideSuspense>
     </RoomProvider>

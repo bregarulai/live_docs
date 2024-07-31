@@ -1,4 +1,4 @@
-export const enum UserType {
+export const enum UserPermision {
   CREATOR = "creator",
   EDITOR = "editor",
   VIEWER = "viewer",
