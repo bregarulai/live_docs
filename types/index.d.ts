@@ -69,3 +69,7 @@ declare type DocumentCardProps = {
     usersAccesses?: null;
   };
 };
+
+declare type ThreadWrapperProps = {
+  thread: ThreadData<BaseMetadata>;
+};
