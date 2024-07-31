@@ -73,3 +73,9 @@ declare type DocumentCardProps = {
 declare type ThreadWrapperProps = {
   thread: ThreadData<BaseMetadata>;
 };
+
+declare type GetDocumentUsersProps = {
+  roomId: string;
+  currentUser: string;
+  text: string;
+};

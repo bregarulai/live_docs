@@ -1,7 +1,8 @@
-import { cn } from "@/lib/utils";
 import { useIsThreadActive } from "@liveblocks/react-lexical";
 import { Composer, Thread } from "@liveblocks/react-ui";
 import { useThreads } from "@liveblocks/react/suspense";
+
+import { cn } from "@/lib/utils";
 
 const ThreadWrapper = ({ thread }: ThreadWrapperProps) => {
   const isActive = useIsThreadActive(thread.id);
