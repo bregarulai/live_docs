@@ -86,3 +86,9 @@ declare type ShareModalProps = {
   creatorId: string;
   currentUserType: UserType | undefined;
 };
+
+declare type UserTypeSelectorProps = {
+  userType: string;
+  setUserType: React.Dispatch<React.SetStateAction<UserType>>;
+  onClickHandler?: (value: string) => void;
+};

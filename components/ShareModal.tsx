@@ -2,6 +2,7 @@
 
 import { useSelf } from "@liveblocks/react/suspense";
 import { useState } from "react";
+import Image from "next/image";
 
 import {
   Dialog,
@@ -13,9 +14,9 @@ import {
 } from "@/components/ui/dialog";
 import { UserPermision } from "./constants";
 import { Button } from "./ui/button";
-import Image from "next/image";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import UserTypeSelector from "./UserTypeSelector";
 
 const ShareModal = ({
   roomId,
@@ -68,6 +69,7 @@ const ShareModal = ({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            <UserTypeSelector userType={userType} setUserType={setUserType} />
           </div>
         </div>
       </DialogContent>
