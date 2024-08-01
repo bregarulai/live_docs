@@ -47,12 +47,11 @@ const ShareModal = ({
           <p className="mr-1 hidden sm:block">Share</p>
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="shad-dialog">
         <DialogHeader>
-          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogTitle>Manage who can view this project</DialogTitle>
           <DialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            Select which users can view and edi tthis document
           </DialogDescription>
         </DialogHeader>
       </DialogContent>
