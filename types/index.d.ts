@@ -79,3 +79,10 @@ declare type GetDocumentUsersProps = {
   currentUser: string;
   text: string;
 };
+
+declare type ShareModalProps = {
+  roomId: string;
+  collaborators: User[] | undefined;
+  creatorId: string;
+  currentUserType: UserType | undefined;
+};
