@@ -141,6 +141,10 @@
   .text-10-regular {
     @apply text-[10px] font-normal;
   }
+
+  .gradient-red {
+    @apply bg-gradient-to-t from-red-500 to-red-400;
+  }
 }
 
 /* ======================== Clerk Override */

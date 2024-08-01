@@ -3,6 +3,7 @@
 import { nanoid } from "nanoid";
 import { revalidatePath } from "next/cache";
 import { RoomAccesses } from "@liveblocks/node";
+import { redirect } from "next/navigation";
 
 import { liveblocks } from "../liveblocks";
 import { getAccessType, parseStringify } from "../utils";
@@ -138,5 +139,16 @@ export const removeCollaborator = async ({
     return parseStringify(updatedRoom);
   } catch (error) {
     console.error(`Error happened while removing a collaborator: ${error}`);
+  }
+};
+
+export const deleteDocument = async (roomId: string) => {
+  try {
+    await liveblocks.deleteRoom(roomId);
+
+    revalidatePath("/");
+    redirect("/");
+  } catch (error) {
+    console.error(`Error happened while deleting a room: ${error}`);
   }
 };

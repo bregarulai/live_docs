@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { dateConverter } from "@/lib/utils";
+import DeleteModal from "./DeleteModal";
 
 const DocumentCard = ({ document }: DocumentCardProps) => {
   const {
@@ -30,7 +31,7 @@ const DocumentCard = ({ document }: DocumentCardProps) => {
           </p>
         </div>
       </Link>
-      {/*TODO: Delete Button */}
+      <DeleteModal roomId={id} />
     </li>
   );
 };

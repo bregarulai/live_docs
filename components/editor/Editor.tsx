@@ -17,12 +17,13 @@ import {
   LiveblocksPlugin,
   useEditorStatus,
 } from "@liveblocks/react-lexical";
+import { useThreads } from "@liveblocks/react/suspense";
 
 import FloatingToolbarPlugin from "./plugins/FloatingToolbarPlugin";
 import { UserPermision } from "../constants";
 import Loader from "../Loader";
-import { useThreads } from "@liveblocks/react/suspense";
 import Comments from "../Comments";
+import DeleteModal from "../DeleteModal";
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -52,13 +53,15 @@ export function Editor({
     theme: Theme,
     editable: currentUserType === UserPermision.EDITOR,
   });
-  console.log("CURRENT USER TYPE: ", currentUserType);
+
   return (
     <LexicalComposer initialConfig={initialConfig}>
       <div className="editor-container size-full">
         <div className="toolbar-wrapper flex min-w-full justify-between">
           <ToolbarPlugin />
-          {/* {currentUserType === UserType.EDITOR && <DeleteModal roomId={roomId}/>} */}
+          {currentUserType === UserPermision.EDITOR && (
+            <DeleteModal roomId={roomId} />
+          )}
         </div>
         <div className="editor-wrapper flex flex-col items-center justify-start">
           {status === "not-loaded" || status === "loading" ? (
