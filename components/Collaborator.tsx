@@ -4,6 +4,10 @@ import Image from "next/image";
 import { UserPermision } from "./constants";
 import UserTypeSelector from "./UserTypeSelector";
 import { Button } from "./ui/button";
+import {
+  removeCollaborator,
+  updateDocumentAccess,
+} from "@/lib/actions/room.actions";
 
 const Collaborator = ({
   roomId,
@@ -17,8 +21,25 @@ const Collaborator = ({
   );
   const [loading, setLoading] = useState(false);
 
-  const shareDocumentHandler = async (type: UserType) => {};
-  const removeCollaboratorHandler = async (email: string) => {};
+  const shareDocumentHandler = async (type: UserType) => {
+    setLoading(true);
+
+    await updateDocumentAccess({
+      roomId,
+      email,
+      userType: type as UserType,
+      updatedBy: user,
+    });
+
+    setLoading(false);
+  };
+  const removeCollaboratorHandler = async (email: string) => {
+    setLoading(true);
+
+    await removeCollaborator({ roomId, email });
+
+    setLoading(false);
+  };
 
   return (
     <li className="flex items-center justify-between gap-2 py-3">
@@ -52,6 +73,7 @@ const Collaborator = ({
             onClickHandler={shareDocumentHandler}
           />
           <Button
+            className="max-w-[76px]"
             type="button"
             onClick={() => removeCollaboratorHandler(collaborator.email)}
           >
