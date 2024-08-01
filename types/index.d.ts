@@ -100,3 +100,12 @@ declare type CollaboratorProps = {
   collaborator: User;
   user: User;
 };
+
+declare type UpdateDocumentAccessParams = {
+  roomId: string;
+  email: string;
+  userType: UserType;
+  updatedBy: User;
+};
+
+declare type AccessType = ["room:write"] | ["room:read", "room:presence:write"];

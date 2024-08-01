@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { UserPermision } from "./constants";
 import Image from "next/image";
+
+import { UserPermision } from "./constants";
 import UserTypeSelector from "./UserTypeSelector";
 import { Button } from "./ui/button";
 

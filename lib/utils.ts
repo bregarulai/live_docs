@@ -1,3 +1,4 @@
+import { UserPermision } from "@/components/constants";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -83,5 +84,18 @@ export const dateConverter = (timestamp: string): string => {
 
     default:
       return "Just now";
+  }
+};
+
+export const getAccessType = (userType: UserType) => {
+  switch (userType) {
+    case UserPermision.CREATOR:
+      return ["room:write"];
+    case UserPermision.EDITOR:
+      return ["room:write"];
+    case UserPermision.VIEWER:
+      return ["room:read", "room:presence:write"];
+    default:
+      return ["room:read", "room:presence:write"];
   }
 };
