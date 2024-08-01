@@ -125,6 +125,10 @@
   .shad-dialog {
     @apply w-full max-w-[400px] rounded-xl border-none bg-doc bg-cover px-5 py-7 shadow-xl sm:min-w-[500px] !important;
   }
+
+  .share-input {
+    @apply h-11 flex-1 border-none bg-dark-400 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+  }
 }
 
 /* ======================== Clerk Override */

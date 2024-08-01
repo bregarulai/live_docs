@@ -14,6 +14,8 @@ import {
 import { UserPermision } from "./constants";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
 
 const ShareModal = ({
   roomId,
@@ -54,6 +56,20 @@ const ShareModal = ({
             Select which users can view and edi tthis document
           </DialogDescription>
         </DialogHeader>
+        <Label className="mt-6 text-blue-100" htmlFor="email">
+          Email address
+        </Label>
+        <div className="flex items-center gap-3">
+          <div className="flex flex-1 rounded-md bg-dark-400">
+            <Input
+              className="share-input"
+              id="email"
+              placeholder="Enter email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+        </div>
       </DialogContent>
     </Dialog>
   );
