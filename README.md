@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-      <img src="[https://github.com/user-attachments/assets/eaaeb1f0-22da-46be-9e29-9bef70e0039d](https://github.com/user-attachments/assets/f19495f6-c177-4d74-b626-dcc07a3243a1)" alt="Project Banner">
+      <img src="https://github.com/user-attachments/assets/f19495f6-c177-4d74-b626-dcc07a3243a1" alt="Project Banner">
   <br />
 
   <div>
