@@ -131,7 +131,7 @@
   }
 
   .shad-select {
-    @apply w-fit border-none bg-transparent text-blue-100 gap-1 !important;
+    @apply w-fit border-none bg-transparent text-blue-100 gap-1 focus-visible:ring-0 focus-visible:ring-offset-0  !important;
   }
 
   .shad-select-item {
