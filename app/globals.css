@@ -145,6 +145,10 @@
   .gradient-red {
     @apply bg-gradient-to-t from-red-500 to-red-400;
   }
+
+  .shad-popover {
+    @apply w-[460ox] border-none bg-dark-200 shadow-lg !important;
+  }
 }
 
 /* ======================== Clerk Override */
