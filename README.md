@@ -13,11 +13,11 @@
 
 </div>
 
-##🤖 Introduction
+## 🤖 Introduction
 
 Next.js to handle the user interface, Liveblocks for real-time features and styled with TailwindCSS, LiveDocs is a clone of Goole Docs. The primary goal is to demonstrate my skills in realtime enviroment that creates a lasting impact.
 
-##⚙️ Tech Stack
+## ⚙️ Tech Stack
 
 - Next.js
 - TypeScript
@@ -26,7 +26,7 @@ Next.js to handle the user interface, Liveblocks for real-time features and styl
 - ShadCN
 - Tailwind CSS
 
-##🔋 Features
+## 🔋 Features
 
 **Authentication**: User authentication using GitHub through Clerk, ensuring secure sign-in/out and session management.
 
@@ -48,7 +48,7 @@ Next.js to handle the user interface, Liveblocks for real-time features and styl
 
 and many more, including code architecture and reusability 
 
-##🤸 Quick Start
+## 🤸 Quick Start
 
 Follow these steps to set up the project locally on your machine.
 
